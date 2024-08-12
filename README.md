@@ -7,12 +7,6 @@ Este projeto é uma API desenvolvida em .NET Core 8 para gerenciamento de produto
 - [Pré-requisitos](#pré-requisitos)
 - [Instalação](#instalação)
 - [Configuração](#configuração)
-- [Execução](#execução)
-- [Estrutura do Projeto](#estrutura-do-projeto)
-- [Uso](#uso)
-- [Testes](#testes)
-- [Contribuições](#contribuições)
-- [Licença](#licença)
 
 ## Pré-requisitos
 
@@ -25,7 +19,7 @@ Antes de iniciar, você precisará ter as seguintes ferramentas instaladas em sua 
 
 ## Instalação
 
-1. 1. **Clone o repositório**
+1. **Clone o repositório**
 
    Clone o repositório do projeto em sua máquina local:
 
@@ -45,9 +39,7 @@ Antes de iniciar, você precisará ter as seguintes ferramentas instaladas em sua 
 	Certifique-se de que o MySQL está instalado e em execução. Crie um banco de dados para o projeto:
 
 	```SQL
-    CREATE DATABASE ecommerce_produto_api;
-
-	Crie as Tabelas:
+    CREATE DATABASE ecommerce_produto_api;	
 
      USE ecommerce_produto_api;
     
@@ -67,4 +59,16 @@ Antes de iniciar, você precisará ter as seguintes ferramentas instaladas em sua 
         Status BOOLEAN ,
         FOREIGN KEY (DepartamentoId) REFERENCES Departamento(Id)
     );
+
+    
+## Configuração
+
+1.  **Atualizar as configurações do banco de dados**
+
+      No arquivo appsettings.json, atualize a string de conexão para apontar para o banco de dados que você acabou de criar:
+ 
+	```json
+      "MySQlConnection": {
+        "MySQlConnectionString": "Server=localhost;DataBase=ecommerce_produto_api;Uid=root;Pwd=root"
+      }
 
