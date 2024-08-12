@@ -1,0 +1,6 @@
+@ecommerce.PordutoAPI_HostAddress = http://localhost:5197
+
+GET {{ecommerce.PordutoAPI_HostAddress}}/weatherforecast/
+Accept: application/json
+
+###
