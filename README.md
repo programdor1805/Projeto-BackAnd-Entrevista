@@ -25,7 +25,7 @@ Antes de iniciar, você precisará ter as seguintes ferramentas instaladas em sua 
 
 ## Instalação
 
-1. **Clone o repositório**
+1. 1. **Clone o repositório**
 
    Clone o repositório do projeto em sua máquina local:
 
@@ -33,4 +33,38 @@ Antes de iniciar, você precisará ter as seguintes ferramentas instaladas em sua 
    git clone https://github.com/programdor1805/Projeto-BackAnd-Entrevista.git
    cd seu-repositorio
    
-   
+2. **Restaurar pacotes NuGet**
+
+	 Navegue até o diretório do projeto e execute o comando abaixo para restaurar os pacotes necessários:
+	```bash
+	dotnet restore
+	
+
+3. **Configurar o banco de dados**
+
+	Certifique-se de que o MySQL está instalado e em execução. Crie um banco de dados para o projeto:
+
+	```SQL
+    CREATE DATABASE ecommerce_produto_api;
+
+	Crie as Tabelas:
+
+     USE ecommerce_produto_api;
+    
+    CREATE TABLE Departamento (
+        Id INT AUTO_INCREMENT PRIMARY KEY,
+        Codigo VARCHAR(50),
+        Descricao VARCHAR(300) 
+    );
+    
+    -- Criação da tabela Produto
+    CREATE TABLE Produto (
+        Id INT AUTO_INCREMENT PRIMARY KEY,
+        Codigo VARCHAR(50),
+        Descricao VARCHAR(300) ,
+        DepartamentoId INT,
+        Preco DECIMAL ,
+        Status BOOLEAN ,
+        FOREIGN KEY (DepartamentoId) REFERENCES Departamento(Id)
+    );
+
